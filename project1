@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>languages:
+        <input type="checkbox" value="jquery" name="language" id="in1">jquery
+        <input type="checkbox" value="c++" name="language" id="in2">c++
+        <input type="checkbox" value="c#" name="language" id="in3">c#
+        <input type="checkbox" value="c" name="language" id="in4">c
+      <input type="submit" id="btn" value="submit">
+      <div id="res">
+
+      </div>
+      <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+            var result= $("input[type='checkbox']:checked")
+                if(result.length>0)
+                {
+                    var resultstring=result.length+'checkbox(s) checked<br/>';
+                    result.each(function(){
+                        resultstring+=$(this).val()+"<br/>"
+                    })
+                    $('#res').html(resultstring)
+                }
+                else
+                {
+                    $('#btn').html("not checked")
+                }
+        })
+        })
+    </script>
+    
+    
+    
+    </body>
+</html>
